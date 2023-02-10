@@ -85,3 +85,7 @@
 
 
 [Information on the scripts](docs/readme.md)
+
+## Notes
+
+Data files are not provided in this repository. The source of the data is noted above when available.
