@@ -15,12 +15,5 @@
     - Modify stripcarts_data.py with the data.
     - Creates the ArcGIS projcets for the strip charts.
     
-## Maps
 
-### State level charging stations
-
-After running steps 1 and 2 above, to create the maps use the EV_GAP_Map project. You will need the ExportByAgency.ipynb and ExportByState.ipynb notebooks to export.
-
-Run ExportByState to create the state level maps showing all sites.
-Run ExportByAgency to create the state level pdf maps showing individual agency sites.
 
