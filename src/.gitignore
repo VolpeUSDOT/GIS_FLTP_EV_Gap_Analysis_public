@@ -1,0 +1,19 @@
+#jupyter notebooks
+.ipynb_checkpoints
+*.ipynb
+#ignore xml files created by arcgis when the toolbox is added.
+*.pyt.xml
+#ignore backup files
+*.bak
+#input output folders
+**/input
+**/output
+**/_misc
+**/_old
+**/__pycache__
+**/_misc
+**/_old
+/MapProj/*
+!/MapProj/MapProj.aprx
+project_share.lnk
+
