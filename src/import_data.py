@@ -14,6 +14,7 @@ from arcgis.geometry import Polygon
 import math
 import numpy as np
 from pathlib import Path
+import json
 # --------------------------------------------------------------------------------------------------
 
 """
@@ -370,7 +371,7 @@ def import_ev_stations_from_api(key_str:str):
         Nothing"""
     print('\nRequesting EV station data from API')
 
-    connector_types = ["J1772","J1772COMBO","CHADEMO"]
+    connector_types = ["J1772","J1772COMBO","CHADEMO","TESLA"]
     api_url = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&access=public&status=all&ev_connector_type={1}&api_key={0}".format(key_str,",".join(connector_types))
 
     data = requests.get(api_url).json()["fuel_stations"]
@@ -672,6 +673,12 @@ def check_ct(l:str):
             return "DCFC"
         elif "J1772" in l:
             return "Level 2"
+        else:
+            return "Level 2"
+    elif "CHADEMO" in l:
+        return "DCFC"
+    elif "TESLA" in l:
+        return "DCFC"
     elif "J1772" in l:
         return "Level 2"
     return None
@@ -751,7 +758,10 @@ def main():
     get_labeling()
     #
     #Get an API KEY from : https://developer.nrel.gov/signup/
-    key_str = ""
+    with open(BASE_DIR/"src/keyinfo.keys",'rb') as f:
+        data = json.load(f)
+    key_str = data["ev_station"]["key_string"]
+
     if key_str == "":
         import_ev_stations()
     else:
