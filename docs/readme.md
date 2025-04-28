@@ -9,6 +9,7 @@
     - Finds DCFC stations with 50 miles and Level 2 stations within 10 miles.
 3. Run closest_facility_nax.py
     - Finds routes to closest stations. Creates od_pairs_dcfc.gdb (or the name set by the parameters)
+    - Using Esri streetmap requires credits. Can use a local network.
 4. Run generate_table_plots.py
     - Creates tables with plots for each agency.
 5. Run stripcharts.py
