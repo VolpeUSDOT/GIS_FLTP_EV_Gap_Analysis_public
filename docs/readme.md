@@ -13,7 +13,7 @@
 4. Run generate_table_plots.py
     - Creates tables with plots for each agency.
 5. Run stripcharts.py
-    - Modify stripcarts_data.py with the data.
+    - Modify stripcarts_data.py with the National Highway Systems data.
     - Creates the ArcGIS projcets for the strip charts.
     
 
